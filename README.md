@@ -5,7 +5,7 @@
 Spatial weighting given a set of pionts on the unit sphere.
 
 The weights are calculated based on geographical distribution of points. The weighting strategy includes:
-1. [Spherical Voronoi Split](https://github.com/wjlei1990/spaceweight/blob/master/src/spaceweight/spherevoronoi.py)
+1. [Spherical Voronoi Split](https://github.com/wjlei1990/spaceweight/blob/master/src/spaceweight/spherevoronoi.py#L177)
 2. [Exponetial Decay](https://github.com/wjlei1990/spaceweight/blob/master/src/spaceweight/sphereweightbase.py#L256)
 3. [Azimuth Bin](https://github.com/wjlei1990/spaceweight/blob/master/src/spaceweight/sphereazimuth.py#L22)
 
