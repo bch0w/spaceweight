@@ -3,7 +3,7 @@ from __future__ import print_function, division
 import numpy as np
 from spaceweight import Point
 from spaceweight.weightbase import WeightBase
-from spaceweight.sphereweight import SphereWeightBase
+from spaceweight.sphereweightbase import SphereWeightBase
 from spaceweight import SphereDistRel, SphereAziBin
 from spaceweight import SphereAziRel, SphereVoronoi
 
@@ -39,7 +39,7 @@ def test_sphereweightbase(points, center):
 
 def test_spheredistrel(points, center):
 
-    outputdir = "test23/"
+    outputdir = "./"
     weight = SphereDistRel(points)
     #weight.calculate_weight(23.0)
     #weight.scan(start=0.1, end=50.0, gap=1.0, plot=True,

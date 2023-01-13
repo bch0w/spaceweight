@@ -14,7 +14,7 @@ from __future__ import print_function, division, absolute_import
 import numpy as np
 import scipy
 import itertools
-from scipy._lib._version import NumpyVersion
+from numpy.lib import NumpyVersion
 from scipy.spatial import distance
 import math
 

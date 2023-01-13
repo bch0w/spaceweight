@@ -22,7 +22,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from obspy.geodetics import locations2degrees
 from obspy.geodetics import gps2dist_azimuth
 
-from . import SpherePoint
+from . import Point, SpherePoint
 from .weightbase import WeightBase
 from .plot_util import plot_circular_sector, plot_points_in_polar
 from .plot_util import plot_rings_in_polar, plot_two_histograms
@@ -68,7 +68,8 @@ class SphereWeightBase(WeightBase):
         :param normalize_mode: refer to superclass WeightBase
         :return:
         """
-        if not isinstance(points[0], SpherePoint):
+        if not isinstance(points[0], (Point, SpherePoint)):
+            import pdb;pdb.set_trace()
             raise TypeError("Type of points should be SpherePoint")
         if center is not None and not isinstance(center, SpherePoint):
             raise TypeError("Type of center should be SpherePoint")
@@ -158,7 +159,11 @@ class SphereWeightBase(WeightBase):
         """
         Plot global map of points and centers
         """
-        from mpl_toolkits.basemap import Basemap
+        try:
+            from mpl_toolkits.basemap import Basemap
+        except ImportError:
+            logger.warning("cannot plot map, cannot import Basemap")
+            return
 
         fig = plt.figure(figsize=(10, 4))
 
